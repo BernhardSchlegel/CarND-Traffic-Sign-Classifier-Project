@@ -1,8 +1,4 @@
-#**Traffic Sign Recognition**
-
-https://review.udacity.com/#!/rubrics/481/view
-
-You're reading it! and here is a link to my [project code](https://github.com/BernhardSchlegel/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
+# Traffic Sign Recognition
 
 ### Build a Traffic Sign Recognition Project
 
@@ -76,22 +72,14 @@ To generate more training data - especially with deep learning it's always bette
 to have more training data - some images can be flipped to generate a new sample
 for the same or a different class.
 
-Take for example class 36 ("go straight or right"):
-
-![test](./writeup/flip_w_relabel.png)
-
-This image can be flipped horizontally to create a new sample, in this case from
+Take for example class 36 ("go straight or right"). This image can be flipped horizontally to create a new sample, in this case from
 class 37 ("go straight or left").
 
 Also, there are cases where the image label remains the same after being flipped
-horizontally, e.g. class 35 ("ahead only"):
-
-![test](./writeup/flip.png)
+horizontally, e.g. class 35 ("ahead only").
 
 Some classes can only be flipped vertically and horizontally, like class 32
-("End of all speed and passing limits"):
-
-![test](./writeup/flip_hv.png)
+("End of all speed and passing limits").
 
 To do this flipping programmatically, an array was created to indicate the legal
 flipping possibilities
@@ -152,21 +140,21 @@ Design and Test a Model Architecture
 My final model consisted of the following layers:
 
 | Layer         		| Params | Input | Output |
-|:------:|:-----:|:-----:|
+|:------:|:-----:|:-----:|:-----:|
 | Input         		| grayscale image   							| | 32x32x1 |
-| Convolution | 5x5, 1x1 stride, same padding| 32x32x1 | 28x28x6 |
+| Convolution 			| 5x5, 1x1 stride, same padding| 32x32x1 | 28x28x6 |
 | RELU					|	- | 28x28x6| 28x28x6 |
 | Max pooling	      	| 2x2 stride |  28x28x6 | 14x14x6 |
-| Convolution | 5x5, 1x1 stride, same padding| 14x14x6 | 10x10x16 |
+| Convolution 			| 5x5, 1x1 stride, same padding| 14x14x6 | 10x10x16 |
 | RELU					|	- | 10x10x16| 10x10x16 |
-| Dropout | 50% | 10x10x16 | 10x10x16 |
-| Max pooling	  | 2x2 stride |  10x10x16 | 5x5x16 |
-| Fully Connected | - | 400 | 120 |
+| Dropout 				| 50% | 10x10x16 | 10x10x16 |
+| Max pooling	  		| 2x2 stride |  10x10x16 | 5x5x16 |
+| Fully Connected 		| - | 400 | 120 |
 | RELU					|	- | 120 | 120 |
-| Dropout | 50% | 120 | 120 |
-| Fully Connected | - | 120 | 84 |
+| Dropout 				| 50% | 120 | 120 |
+| Fully Connected 		| - | 120 | 84 |
 | RELU					|	- | 120 | 120 |
-| Fully Connected | - | 84 | 43 |
+| Fully Connected 		| - | 84 | 43 |
 
 I didn't experiment much with the model architecture but focussed on other things
 like regularization (see next section) and data preprocessing, since their effect
@@ -209,8 +197,6 @@ If an iterative approach was chosen:
   the training time.
 
 ### Test a Model on New Images
-
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
